@@ -1,0 +1,42 @@
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--color-accent);
+    color: var(--color-bg-primary);
+    font-family: var(--font-body);
+    font-weight: 600;
+    text-transform: uppercase;
+    border: 1px solid var(--color-accent);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    letter-spacing: 1px;
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: var(--color-accent);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-accent);
+    color: var(--color-bg-primary);
+}
+
+/* Cards */
+.card {
+    background-color: var(--color-bg-secondary);
+    padding: var(--spacing-md);
+    border-radius: 4px;
+    transition: transform var(--transition-fast);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}

@@ -1,0 +1,28 @@
+:root {
+  /* Colors */
+  --color-bg-primary: #1a1a1a; /* Charcoal / Matte Black */
+  --color-bg-secondary: #2c2c2c; /* Slightly lighter for cards/sections */
+  --color-accent: #d4af37; /* Gold */
+  --color-text-primary: #f0f0f0; /* Off-white */
+  --color-text-secondary: #a0a0a0; /* Light gray */
+  --color-overlay: rgba(0, 0, 0, 0.6);
+
+  /* Typography */
+  --font-heading: 'Playfair Display', serif; /* Elegant Serif */
+  --font-body: 'Inter', sans-serif; /* Clean Sans-serif */
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 8rem;
+
+  /* Layout */
+  --container-width: 1200px;
+  --header-height: 80px;
+
+  /* Transitions */
+  --transition-fast: 0.3s ease;
+  --transition-slow: 0.8s ease;
+}
