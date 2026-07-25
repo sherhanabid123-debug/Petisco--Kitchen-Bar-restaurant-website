@@ -1,5 +1,7 @@
 # Petisco Kitchen & Bar
 
+**Live site:** [https://petisco-kitchen-bar.vercel.app](https://petisco-kitchen-bar.vercel.app)
+
 Website for Petisco Kitchen & Bar, a restaurant and bar in Goa, built with Vite and vanilla JavaScript.
 
 ## Features
