@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local tooling config
+.gemini/
+.claude/
+.agent/
+.agents/
+CLAUDE.md
+AGENTS.md

@@ -1,8 +1,14 @@
 {
   "name": "petisco",
+  "description": "Website for Petisco Kitchen & Bar, a restaurant and bar in Goa.",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "author": "Sherhan Abid",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sherhanabid123-debug/Petisco--Kitchen-Bar"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
