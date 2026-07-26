@@ -4,12 +4,12 @@ export function initGallery() {
 
   // Gallery Data
   const galleryItems = [
-    { id: 1, title: 'Interior Vibe', image: '/src/assets/images/interior-1.jpg' },
-    { id: 2, title: 'Bar Atmosphere', image: '/src/assets/images/bar.jpg' },
-    { id: 3, title: 'Signature Cocktail', image: '/src/assets/images/cocktail.jpg' },
-    { id: 4, title: 'The Space', image: '/src/assets/images/bar-detail.jpg' },
-    { id: 5, title: 'Plated Dish', image: '/src/assets/images/food.jpg' },
-    { id: 6, title: 'Evening Light', image: '/src/assets/images/hero.jpg' }
+    { id: 1, title: 'Interior Vibe', image: '/images/interior-1.jpg' },
+    { id: 2, title: 'Bar Atmosphere', image: '/images/bar.jpg' },
+    { id: 3, title: 'Signature Cocktail', image: '/images/cocktail.jpg' },
+    { id: 4, title: 'The Space', image: '/images/bar-detail.jpg' },
+    { id: 5, title: 'Plated Dish', image: '/images/food.jpg' },
+    { id: 6, title: 'Evening Light', image: '/images/hero.jpg' }
   ];
 
   // Render Grid
