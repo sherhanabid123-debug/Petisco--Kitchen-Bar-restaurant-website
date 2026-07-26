@@ -8,6 +8,7 @@
     font-weight: 600;
     text-transform: uppercase;
     border: 1px solid var(--color-accent);
+    border-radius: 2px;
     cursor: pointer;
     transition: all var(--transition-fast);
     letter-spacing: 1px;
@@ -16,6 +17,8 @@
 .btn:hover {
     background-color: transparent;
     color: var(--color-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.18);
 }
 
 .btn-secondary {
@@ -33,10 +36,11 @@
 .card {
     background-color: var(--color-bg-secondary);
     padding: var(--spacing-md);
-    border-radius: 4px;
-    transition: transform var(--transition-fast);
+    border-radius: 8px;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
 }

@@ -55,6 +55,12 @@ img {
   display: block;
 }
 
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
 section {
   padding: var(--spacing-lg) 0;
 }
