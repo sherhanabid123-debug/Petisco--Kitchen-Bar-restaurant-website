@@ -1,28 +1,61 @@
+function extractTag(description) {
+  const match = description.match(/\(([^)]+)\)\s*$/);
+  if (!match) return { text: description, tag: null };
+  return { text: description.replace(match[0], '').trim(), tag: match[1] };
+}
+
+function renderItems(category) {
+  return category.items.map((item, i) => {
+    const { text, tag } = extractTag(item.description);
+    return `
+      <li class="menu-row fade-in-up" style="animation-delay:${i * 60}ms">
+        <div class="menu-row-top">
+          <span class="menu-name">${item.name}</span>
+          <span class="menu-leader" aria-hidden="true"></span>
+          <span class="menu-price">${item.price}</span>
+        </div>
+        <div class="menu-row-bottom">
+          <p class="menu-desc">${text}</p>
+          ${tag ? `<span class="menu-tag">${tag}</span>` : ''}
+        </div>
+      </li>
+    `;
+  }).join('');
+}
+
 export function renderMenu(data) {
   const container = document.getElementById('menu-container');
   if (!container) return;
 
-  const categories = Object.keys(data);
+  const keys = Object.keys(data).filter(k => data[k] && data[k].items && data[k].items.length);
+  if (!keys.length) return;
 
-  container.innerHTML = categories.map(key => {
-    const category = data[key];
-    if (!category || !category.items || category.items.length === 0) return '';
+  container.innerHTML = `
+    <div class="menu-tabs" role="tablist">
+      ${keys.map((k, i) => `
+        <button class="menu-tab${i === 0 ? ' active' : ''}" role="tab" aria-selected="${i === 0}" data-key="${k}">
+          ${data[k].title}
+        </button>
+      `).join('')}
+    </div>
+    <ul class="menu-list" id="menu-list"></ul>
+  `;
 
-    return `
-      <div class="menu-category fade-in-up">
-        <h3>${category.title}</h3>
-        <div class="menu-grid">
-          ${category.items.map(item => `
-            <div class="menu-item">
-              <div class="menu-header">
-                <span class="menu-name">${item.name}</span>
-                <span class="menu-price">${item.price}</span>
-              </div>
-              <p class="menu-desc">${item.description}</p>
-            </div>
-          `).join('')}
-        </div>
-      </div>
-    `;
-  }).join('');
+  const list = container.querySelector('#menu-list');
+  const tabs = container.querySelectorAll('.menu-tab');
+
+  function showCategory(key) {
+    list.innerHTML = renderItems(data[key]);
+    tabs.forEach(t => {
+      const isActive = t.dataset.key === key;
+      t.classList.toggle('active', isActive);
+      t.setAttribute('aria-selected', isActive);
+    });
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => showCategory(tab.dataset.key));
+  });
+
+  showCategory(keys[0]);
 }
